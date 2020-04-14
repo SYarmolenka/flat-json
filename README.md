@@ -6,7 +6,7 @@ You should have [Node.js](https://nodejs.org/) for starting the package.
 
 ### `npm install` or `yarn`
 
-packages files:
+files of package:
 
 ```
 flat-json/
