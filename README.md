@@ -1,4 +1,4 @@
-## The package takes json files of any nesting level and creates a new json files with one level nesting. The converting works in two direction.
+## The package takes json files of any nesting level and creates new json files with one level nesting. The converting works in two direction.
 
 ## Easy start:
 
