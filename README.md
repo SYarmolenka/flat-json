@@ -19,7 +19,7 @@ flat-json/
   package.json
 ```
 
-There are two folders for working with json files: raw and result. In raw folder you should put your json files for handling. In result folder you will find handled json files after completion of handling command. Json files should be valid and have structure of array or object, otherwise we will get the same files or error.
+There are two folders for working with json files: raw and result. In raw folder you should put your json files for handling. In result folder you will find handled json files after completion of handling command. Json files should be valid and have structure of array or object, otherwise you will get the same files or error.
 
 ## Main commands:
 

@@ -14,7 +14,7 @@ const {
   NULL,
 } = require('./consts');
 
-const getHandler = (type, name, value) => ({ [`${name}${LEVEL_DIVIDE}${type}`]: value });
+const getHandler = (type, name, value) => ({ [[name, LEVEL_DIVIDE, type].join('')]: value });
 
 const handleString = curry(getHandler)(STRING);
 const handleNumber = curry(getHandler)(NUMBER);
@@ -27,7 +27,6 @@ const handleSimpleType = (name, value) => cond([
   [is(Boolean), handleBoolean(name)],
   [T, handleNull(name)],
 ])(value);
-
 
 const getPath = pipe(
   split(LEVEL_DIVIDE),
@@ -54,7 +53,6 @@ const checkValidJson = (json) => {
 
 const handleFiles = (handler) => {
   const regexp = /\.json$/i;
-  const files = readdirSync('./raw');
 
   readdirSync('./raw')
     .filter((name) => regexp.test(name))
@@ -64,10 +62,11 @@ const handleFiles = (handler) => {
 
       writeFileSync(`./result/${filename}`, JSON.stringify(result, null, 2));
     });
-  
-  console.log('Command done! Check the result folder.')
-}
+
+  // eslint-disable-next-line no-console
+  console.log('Command done! Check the result folder.');
+};
 
 module.exports = {
   handleSimpleType, getPath, checkValidJson, handleFiles,
-}
+};
