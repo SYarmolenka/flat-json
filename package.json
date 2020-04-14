@@ -1,0 +1,15 @@
+{
+  "name": "flat-json",
+  "version": "1.0.0",
+  "description": "create/parse flat-json",
+  "repository": "https://github.com/SYarmolenka/flatJson.git",
+  "author": "Sergey Ermolenko <sergei.ermolenko@upsilonit.com>",
+  "license": "MIT",
+  "scripts": {
+    "transform": "node transform.js",
+    "extract": "node extract.js"
+  },
+  "dependencies": {
+    "ramda": "^0.27.0"
+  }
+}
