@@ -23,8 +23,8 @@ There are two folders for working with json files: raw and result. In raw folder
 
 ## Main commands:
 
-### `npm transform` or `yarn transform`
+### `npm run transform` or `yarn transform`
 Transforms json files from high nesting level structure to one nesting level structure.
 
-### `npm extract` or `yarn extract`
+### `npm run extract` or `yarn extract`
 Returns json files to native structure.
