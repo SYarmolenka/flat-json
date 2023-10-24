@@ -2,7 +2,7 @@
 
 ## Easy start:
 
-You should have [Node.js](https://nodejs.org/) for starting the package.
+You should have [Node.js](https://nodejs.org/) for starting the package (18.15.0).
 
 ### `npm install` or `yarn`
 

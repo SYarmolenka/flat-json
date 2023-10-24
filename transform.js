@@ -1,5 +1,5 @@
 const {
-  cond, curry, is, pipe, merge, T, keys, reduce, isEmpty,
+  cond, curry, is, pipe, mergeRight, T, keys, reduce, isEmpty,
 } = require('ramda');
 
 const {
@@ -18,8 +18,8 @@ const handleObject = (name, obj) => cond([
       const nextName = [name, LEVEL_DIVIDE, ARRAY, OBJECT_DIVIDE, index].join('');
 
       return cond([
-        [is(Object), pipe(curry(handleObject)(nextName), merge(acc))],
-        [T, pipe(curry(handleSimpleType)(nextName), merge(acc))],
+        [is(Object), pipe(curry(handleObject)(nextName), mergeRight(acc))],
+        [T, pipe(curry(handleSimpleType)(nextName), mergeRight(acc))],
       ])(item);
     }, {}),
   ],
@@ -31,8 +31,8 @@ const handleObject = (name, obj) => cond([
         const nextName = [name, LEVEL_DIVIDE, OBJECT, OBJECT_DIVIDE, key].join('');
 
         return cond([
-          [is(Object), pipe(curry(handleObject)(nextName), merge(acc))],
-          [T, pipe(curry(handleSimpleType)(nextName), merge(acc))],
+          [is(Object), pipe(curry(handleObject)(nextName), mergeRight(acc))],
+          [T, pipe(curry(handleSimpleType)(nextName), mergeRight(acc))],
         ])(data[key]);
       }, {}),
     )(data),
